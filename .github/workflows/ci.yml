@@ -3,11 +3,11 @@ name: CI worklflow
 on:
   push:
     branches:
-      -main # execute le workflow a chaque push sur main
+      - main # execute le workflow a chaque push sur main
 
   pull_request:
     branches:
-      -main #executesur le pull requests vers main
+      - main #executesur le pull requests vers main
 
  jobs:
    test:
@@ -17,15 +17,15 @@ on:
         - name:  checkout code
           uses: actions/checkout@v2
 
-        -name:set up Python
+        - name:set up Python
          uses: actions/setup-python@v2
          with:
            python-version:'3.12'
-         -name: install dependencies
+         - name: install dependencies
           run:
              python -m pip install --upgrade pip
              pip  install pytest 
-          -name: Run tests
+          - name: Run tests
            run: pytest
 
 
